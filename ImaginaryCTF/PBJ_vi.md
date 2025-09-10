@@ -6,6 +6,9 @@
 
 ## Phân tích ban đầu
 
+<img width="697" height="194" alt="image" src="https://github.com/user-attachments/assets/14693030-971b-443d-9143-27af6af4cf43" />
+
+
 Chúng ta được cung cấp mã nguồn của một hợp đồng thông minh Solidity, `Chall.sol`. Mục tiêu của thử thách là khai thác một lỗ hổng trong hợp đồng này để tăng số dư ETH của chúng ta lên hơn 50 ETH, được định nghĩa bởi hàm `isChallSolved()`.
 
 Hợp đồng này triển khai một Nhà tạo lập thị trường tự động (AMM) đơn giản cho một token có tên là `flagCoin`. Hãy phân tích các thành phần chính của nó:
@@ -101,3 +104,4 @@ Bằng cách chạy script này, số dư của chúng ta cuối cùng sẽ vư�
 ### Cách khắc phục lỗ hổng
 
 Việc sửa lỗi rất đơn giản: hợp đồng nên tính toán lại `k` sau mỗi giao dịch làm thay đổi lượng dự trữ. Thêm `k = eth * flagCoin;` vào cuối cả hai hàm `buy()` và `sell()` sẽ vá được lỗ hổng này.
+
